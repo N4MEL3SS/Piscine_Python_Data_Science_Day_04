@@ -22,25 +22,26 @@ def list_comprehension_email():
     return [gmail for gmail in emails if gmail.endswith('@gmail.com')]
 
 
-def time_loop():
+def time_loop(n):
     stmt = 'loop_email()'
     code = 'from __main__ import loop_email'
-    times = timeit.timeit(stmt=stmt, setup=code, number=90000000)
+    times = timeit.timeit(stmt=stmt, setup=code, number=n)
     # 90000000
     return times
 
 
-def time_comprehension():
+def time_comprehension(n):
     stmt = 'list_comprehension_email()'
     code = 'from __main__ import list_comprehension_email'
-    times = timeit.timeit(stmt=stmt, setup=code, number=90000000)
+    times = timeit.timeit(stmt=stmt, setup=code, number=n)
     # 90000000
     return times
 
 
 def main():
-    loop_time = time_loop()
-    comprehension_time = time_comprehension()
+    n = 90000000
+    loop_time = time_loop(n)
+    comprehension_time = time_comprehension(n)
 
     time_sorted = sorted([loop_time, comprehension_time])
     if time_sorted[0] == comprehension_time:

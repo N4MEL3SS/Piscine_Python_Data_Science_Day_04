@@ -28,34 +28,35 @@ def map_email():
     return map(lambda x: x if x.endswith('@gmail.com') else None, emails)
 
 
-def time_loop():
+def time_loop(n):
     stmt = 'loop_email()'
     code = 'from __main__ import loop_email'
-    times = timeit.timeit(stmt=stmt, setup=code, number=90000000)
+    times = timeit.timeit(stmt=stmt, setup=code, number=n)
     # 90000000
     return times
 
 
-def time_comprehension():
+def time_comprehension(n):
     stmt = 'list_comprehension_email()'
     code = 'from __main__ import list_comprehension_email'
-    times = timeit.timeit(stmt=stmt, setup=code, number=90000000)
+    times = timeit.timeit(stmt=stmt, setup=code, number=n)
     # 90000000
     return times
 
 
-def time_map():
+def time_map(n):
     stmt = 'map_email()'
     code = 'from __main__ import map_email'
-    times = timeit.timeit(stmt=stmt, setup=code, number=90000000)
+    times = timeit.timeit(stmt=stmt, setup=code, number=n)
     # 90000000
     return times
 
 
 def main():
-    loop_time = time_loop()
-    comprehension_time = time_comprehension()
-    map_time = time_map()
+    n = 90000000
+    loop_time = time_loop(n)
+    comprehension_time = time_comprehension(n)
+    map_time = time_map(n)
 
     time_sorted = sorted([loop_time, comprehension_time, map_time])
     if time_sorted[0] == comprehension_time:

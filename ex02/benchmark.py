@@ -27,7 +27,6 @@ def list_comprehension_email():
 def map_email():
     emails = email_data()
     return map(lambda x: x if x.endswith('@gmail.com') else None, emails)
-    # return list(map(lambda x: x if x.endswith('@gmail.com') else None, emails))
 
 
 def filter_email():

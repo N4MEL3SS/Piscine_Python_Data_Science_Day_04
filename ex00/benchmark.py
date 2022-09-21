@@ -38,7 +38,7 @@ def time_comprehension():
     return times
 
 
-if __name__ == '__main__':
+def main():
     loop_time = time_loop()
     comprehension_time = time_comprehension()
 
@@ -48,3 +48,7 @@ if __name__ == '__main__':
     else:
         print('it is better to use a loop')
     print(*time_sorted, sep=' vs ')
+
+
+if __name__ == '__main__':
+    main()

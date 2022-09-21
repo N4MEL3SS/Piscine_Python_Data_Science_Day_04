@@ -26,7 +26,6 @@ def list_comprehension_email():
 def map_email():
     emails = email_data()
     return map(lambda x: x if x.endswith('@gmail.com') else None, emails)
-    # return list(map(lambda x: x if x.endswith('@gmail.com') else None, emails))
 
 
 def time_loop():
@@ -53,7 +52,7 @@ def time_map():
     return times
 
 
-if __name__ == '__main__':
+def main():
     loop_time = time_loop()
     comprehension_time = time_comprehension()
     map_time = time_map()
@@ -66,3 +65,7 @@ if __name__ == '__main__':
     else:
         print('it is better to use a map')
     print(*time_sorted, sep=' vs ')
+
+
+if __name__ == '__main__':
+    main()

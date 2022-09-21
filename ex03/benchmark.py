@@ -28,8 +28,8 @@ def main(function, num, sqrt_sum):
     if function in name_function:
         print(benchmark(function + '_sum', int(num), int(sqrt_sum)))
     else:
-        raise Exception(f'Function {function} not found!')
-        # print(function, "not found!")
+        print(function, "not found!")
+        # raise Exception(f'Function {function} not found!')
 
 
 if __name__ == '__main__':

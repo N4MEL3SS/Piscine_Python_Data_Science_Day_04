@@ -47,8 +47,8 @@ def main(function, num):
     if function in name_function:
         print(benchmark(function + '_email', int(num)))
     else:
-        raise Exception(f'Function {function} not found!')
-        # print(function, "not found!")
+        print(function, "not found!")
+        # raise Exception(f'Function {function} not found!')
 
 
 if __name__ == '__main__':
